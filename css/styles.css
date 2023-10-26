@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    width: 550px;
+    height: 729px;
+    margin: 50px auto;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 33px;
+    line-height: 38px;
+}

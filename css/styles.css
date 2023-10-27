@@ -8,37 +8,36 @@ body {
     width: 550px;
     height: 729px;
     margin: 50px auto;
-    border: 1px solid black;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
 
-.convert-input, .convert-input input {
+.convert-input-container, .convert-input-container input {
     background-color: #6943FF;
 }
 
-.convert-input {
+.convert-input-container {
     height: 285px;
 }
 
-.convert-input h1 {
+.convert-input-container h1 {
     font-size: 28px;
     font-weight: 800;
     line-height: 38px;
     margin: 33px auto;
 }
 
-.convert-input h1, .convert-input input {
+.convert-input-container h1, .convert-input-container input {
     color: #FFF;
 }
 
-.convert-input input,  .convert-input button {
+.convert-input-container input,  .convert-input-container button {
     display: block;
     margin: 25px auto;
 }
 
-.convert-input input {
+.convert-input-container input {
     font-size: 58px;
     font-weight: 800;
     width: 113px;
@@ -56,11 +55,46 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.convert-input button {
+.convert-input-container button {
     color: #3d3d3d;
     background-color: #FFF;
     border-radius: 5px;
     padding: 9px 28px;
     border: none;  
     width: 117px;
+}
+
+.convert-results-container {
+    width: 100%;
+    height: 100%;
+    background-color: #F4F4F4;
+    box-sizing: border-box;
+}
+
+.convert-results {
+    width: 500px;
+    height: 109px;
+    background-color: #FFF;
+    margin: 25px auto;
+}
+
+.indent-top {
+    margin-top: 35px;
+}
+
+.convert-results-container h2 {
+    font-weight: 600;
+    font-size: 20px;
+    color: #5A537B;
+    padding: 30px;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+.convert-results-container p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #353535;
+    margin: 0;
+    padding-top: 10px;
 }

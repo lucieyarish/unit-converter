@@ -11,15 +11,24 @@
     </head>
     <body>
         <div class="container">
-            <div class="convert-input">
+            <div class="convert-input-container">
                 <h1>Metric/Imperial Unit Conversion</h1>
-                <input type="number" min="0">
+                <input id="user-input"type="number" min="0">
                 <button id="convert-input-btn">Convert</button>
             </div>
-            <div class="convert-results">
-                <div class="convert-results-container"></div>
-                <div class="convert-results-container"></div>
-                <div class="convert-results-container"></div>
+            <div id="converted-results"class="convert-results-container">
+                <div class="convert-results indent-top">
+                    <h2>Length (Meter/Feet)</h2>
+                    <p id="length-result"></p>
+                </div>
+                <div class="convert-results">
+                    <h2>Volume (Liters/Gallons)</h2>
+                    <p id="volume-result"></p>
+                </div>
+                <div class="convert-results">
+                    <h2>Mass (Kilograms/Pounds)</h2>
+                    <p id="mass-result"></p>
+                </div>
             </div>
         </div>
         <script src="js/index.js"></script>

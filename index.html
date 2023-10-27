@@ -12,22 +12,23 @@
     <body>
         <div class="container">
             <div class="convert-input-container">
+                <button id="toggle-btn" class="toggle">🌞</button>
                 <h1>Metric/Imperial Unit Conversion</h1>
                 <input id="user-input"type="number" min="0">
-                <button id="convert-input-btn">Convert</button>
+                <button id="convert-input-btn" class="convert-btn">Convert</button>
             </div>
             <div id="converted-results"class="convert-results-container">
                 <div class="convert-results indent-top">
-                    <h2>Length (Meter/Feet)</h2>
-                    <p id="length-result"></p>
+                    <h2 class="convert-results-title">Length (Meter/Feet)</h2>
+                    <p class="convert-results-text" id="length-result"></p>
                 </div>
                 <div class="convert-results">
-                    <h2>Volume (Liters/Gallons)</h2>
-                    <p id="volume-result"></p>
+                    <h2 class="convert-results-title">Volume (Liters/Gallons)</h2>
+                    <p class="convert-results-text" id="volume-result"></p>
                 </div>
                 <div class="convert-results">
-                    <h2>Mass (Kilograms/Pounds)</h2>
-                    <p id="mass-result"></p>
+                    <h2 class="convert-results-title">Mass (Kilograms/Pounds)</h2>
+                    <p class="convert-results-text" id="mass-result"></p>
                 </div>
             </div>
         </div>

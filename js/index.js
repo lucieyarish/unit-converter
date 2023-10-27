@@ -3,6 +3,9 @@ const convertBtn = document.getElementById('convert-input-btn');
 const lengthEl = document.getElementById('length-result');
 const volumeEl = document.getElementById('volume-result');
 const massEl = document.getElementById('mass-result');
+const toggleBtn = document.getElementById('toggle-btn');
+const resultsContainer = document.getElementById('converted-results');
+let isLightMode = true;
 
 convertBtn.addEventListener('click', function () {
   convertUnits(userInput.value);
@@ -14,6 +17,10 @@ userInput.addEventListener('keypress', function (event) {
     convertUnits(userInput.value);
     userInput.value = '';
   }
+});
+
+toggleBtn.addEventListener('click', function () {
+  modeToggle();
 });
 
 function convertUnits(userValue) {
@@ -54,4 +61,29 @@ function convertMass(value) {
 
 function clearPrevResult(element) {
   element.innerHTML = '';
+}
+
+function modeToggle() {
+  isLightMode = !isLightMode;
+  isLightMode ? (toggleBtn.innerText = '🌞') : (toggleBtn.innerText = '🌚');
+  resultsContainer.classList.toggle('dark-container');
+
+  const resultContainers = document.getElementsByClassName('convert-results');
+  for (let i = 0; i < resultContainers.length; i++) {
+    resultContainers[i].classList.toggle('dark-inner-container');
+  }
+
+  const resultContainersTitle = document.getElementsByClassName(
+    'convert-results-title'
+  );
+  for (let i = 0; i < resultContainersTitle.length; i++) {
+    resultContainersTitle[i].classList.toggle('light-title');
+  }
+
+  const resultContainersText = document.getElementsByClassName(
+    'convert-results-text'
+  );
+  for (let i = 0; i < resultContainersText.length; i++) {
+    resultContainersText[i].classList.toggle('light-text');
+  }
 }

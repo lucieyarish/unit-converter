@@ -25,14 +25,14 @@ body {
     font-size: 28px;
     font-weight: 800;
     line-height: 38px;
-    margin: 33px auto;
+    margin: 1px auto;
 }
 
 .convert-input-container h1, .convert-input-container input {
     color: #FFF;
 }
 
-.convert-input-container input,  .convert-input-container button {
+.convert-input-container input, .convert-btn {
     display: block;
     margin: 25px auto;
 }
@@ -55,7 +55,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.convert-input-container button {
+.convert-btn {
     color: #3d3d3d;
     background-color: #FFF;
     border-radius: 5px;
@@ -82,7 +82,7 @@ input::-webkit-inner-spin-button {
     margin-top: 35px;
 }
 
-.convert-results-container h2 {
+.convert-results-title {
     font-weight: 600;
     font-size: 20px;
     color: #5A537B;
@@ -91,10 +91,41 @@ input::-webkit-inner-spin-button {
     padding-bottom: 0;
 }
 
-.convert-results-container p {
+.convert-results-text {
     font-weight: 400;
     font-size: 14px;
     color: #353535;
     margin: 0;
     padding-top: 10px;
+}
+
+/* DARK MODE STYLES */
+#toggle-btn {
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-left: 490px;
+    font-size: 20px;
+    background: #ffffff2a;
+    border: none;
+    border-radius: 45%;
+}
+
+#toggle-btn:hover {
+    background-color: #ffffffc4;
+}
+
+.dark-container {
+    background: #1F2937;
+}
+
+.dark-inner-container {
+    background: #273549;
+}
+
+.light-title {
+    color: #CCC1FF;
+}
+
+.light-text {
+    color: #FFF;
 }

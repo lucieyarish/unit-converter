@@ -4,6 +4,8 @@
 
 Try the Unit Converter out on [Netlify](https://lambent-sorbet-d27f8e.netlify.app/)!
 
+https://github.com/lucieyarish/unit-converter/assets/79669599/f7bb53d7-e3c8-4b48-b118-aa601a5fa41f
+
 ## About
 
 This solo project was build entirely by me while learning JavaScript basics through Scrimba's [Frontend Career Path courses](https://scrimba.com/learn/frontend). Figma design was provided by Scrimba and adjusted by me (I added a toggle button to switch between light and dark mode).

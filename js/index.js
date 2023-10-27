@@ -65,7 +65,7 @@ function clearPrevResult(element) {
 
 function modeToggle() {
   isLightMode = !isLightMode;
-  isLightMode ? (toggleBtn.innerText = '🌞') : (toggleBtn.innerText = '🌚');
+  isLightMode ? (toggleBtn.innerText = '🌚') : (toggleBtn.innerText = '🌞');
   resultsContainer.classList.toggle('dark-container');
 
   const resultContainers = document.getElementsByClassName('convert-results');

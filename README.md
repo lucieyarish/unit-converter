@@ -2,7 +2,7 @@
 
 🧮 Metric / imperial unit converter built with HTML, CSS and Vanilla JavaScript
 
-Try the Unit Converter out on [Netlify](https://lambent-sorbet-d27f8e.netlify.app/)!
+Try the Unit Converter out on [Netlify]([https://lambent-sorbet-d27f8e.netlify.app/](https://unit-converter-lucieyarish.netlify.app/))!
 
 https://github.com/lucieyarish/unit-converter/assets/79669599/f7bb53d7-e3c8-4b48-b118-aa601a5fa41f
 

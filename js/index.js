@@ -6,16 +6,28 @@ const massEl = document.getElementById('mass-result');
 const toggleBtn = document.getElementById('toggle-btn');
 const resultsContainer = document.getElementById('converted-results');
 let isLightMode = true;
+const meterToFeetConversionRate = 3.281;
+const literToGalonConversionRate = 0.264;
+const kilogramToPoundConversionRate = 2.204;
 
-convertBtn.addEventListener('click', function () {
-  convertUnits(userInput.value);
-  userInput.value = '';
+convertBtn.addEventListener('click', function (event) {
+  preventDefaultForNegativeValues(event);
+
+  if (userInput.value !== '' && userInput.value > 0) {
+    convertBtn.disabled = false;
+    convertAndClear();
+  }
+
+  convertBtn.disabled = true;
 });
 
 userInput.addEventListener('keypress', function (event) {
-  if (event.key === 'Enter') {
-    convertUnits(userInput.value);
-    userInput.value = '';
+  preventDefaultForNegativeValues(event);
+
+  if (userInput.value !== '' && userInput.value > 0) {
+    if (event.key === 'Enter') {
+      convertAndClear();
+    }
   }
 });
 
@@ -23,40 +35,40 @@ toggleBtn.addEventListener('click', function () {
   modeToggle();
 });
 
+function preventDefaultForNegativeValues(event) {
+  if (event.key === '-') {
+    event.preventDefault();
+  }
+}
+
+function convertAndClear() {
+  convertUnits(userInput.value);
+  userInput.value = '';
+}
+
 function convertUnits(userValue) {
-  convertLength(userValue);
+  convert(userValue, lengthEl, meterToFeetConversionRate, 'meters', 'feet');
+  convert(userValue, volumeEl, literToGalonConversionRate, 'liters', 'gallons');
+  convert(
+    userValue,
+    massEl,
+    kilogramToPoundConversionRate,
+    'kilograms',
+    'pounds'
+  );
+
   convertVolume(userValue);
   convertMass(userValue);
 }
 
-function convertLength(value) {
-  clearPrevResult(lengthEl);
-  const toFeet = value * 3.281;
-  const toMeters = value / 3.281;
-  lengthEl.innerHTML += `
-    ${value} meters = ${toFeet.toFixed(3)} feet | 
-    ${value} feet = ${toMeters.toFixed(3)} meters
+function convert(value, resultEl, conversionRate, firstUnit, secondUnit) {
+  clearPrevResult(resultEl);
+  const toFirstUnit = value * conversionRate;
+  const toSecondUnit = value / conversionRate;
+  resultEl.innerHTML += `
+    ${value} ${firstUnit} = ${toFirstUnit.toFixed(3)} ${secondUnit} | 
+    ${value} ${secondUnit} = ${toSecondUnit.toFixed(3)} ${firstUnit}
   `;
-}
-
-function convertVolume(value) {
-  clearPrevResult(volumeEl);
-  const toGallons = value * 0.264;
-  const toLiters = value / 0.264;
-  volumeEl.innerHTML += `
-  ${value} liters = ${toGallons.toFixed(3)} gallons | 
-  ${value} gallons = ${toLiters.toFixed(3)} liters
-  `;
-}
-
-function convertMass(value) {
-  clearPrevResult(massEl);
-  const toPounds = value * 2.204;
-  const toKilograms = value / 2.204;
-  massEl.innerHTML += `
-    ${value} kilograms = ${toPounds.toFixed(3)} pounds | 
-    ${value} pounds = ${toKilograms.toFixed(3)} kilograms
-    `;
 }
 
 function clearPrevResult(element) {
